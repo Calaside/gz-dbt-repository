@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: gz_raw_data
+    description: data from Circle
+    tables:
+      - name: raw_gz_products
+        description: products id and purchase price
+      - name: raw_gz_ship
+        description: orders id, shipping fees & costs, log costs
+      - name: raw_gz_sales
+        description: date, orders id, products id, revenue and qty
