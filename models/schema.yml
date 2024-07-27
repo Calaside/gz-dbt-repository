@@ -4,9 +4,46 @@ sources:
   - name: gz_raw_data
     description: data from Circle
     tables:
-      - name: raw_gz_products
+      - name: raw_gz_product
         description: products id and purchase price
       - name: raw_gz_ship
         description: orders id, shipping fees & costs, log costs
       - name: raw_gz_sales
         description: date, orders id, products id, revenue and qty
+
+models:
+  - name: product
+    description: exhaustiv list of products id and purchase price
+    columns:
+      - name: purchase_price
+      - name: product_id
+        tests:
+        - unique
+        - not_null
+            
+  - name: ship
+    description: all shipping costs and fees associated with orders id
+    columns:
+      - name: orders_id
+        tests:
+        - unique
+        - not_null
+            
+      - name: shipping_fee
+      - name: logCost
+      - name: Ship_cost
+
+  - name: sales
+    description: all sales by date, orders id, products sold, revenue and quantity
+    columns:
+      - name: date_date 
+      - name: orders_id
+      - name: key
+        description: primary key
+        tests:
+          - unique
+          - not_null
+              
+      - name: pdt_id as products_id
+      - name: revenue
+      - name: quantity
