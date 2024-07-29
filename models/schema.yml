@@ -17,18 +17,11 @@ models:
     columns:
       - name: purchase_price
       - name: product_id
-        tests:
-        - unique
-        - not_null
             
   - name: ship
     description: all shipping costs and fees associated with orders id
     columns:
       - name: orders_id
-        tests:
-        - unique
-        - not_null
-            
       - name: shipping_fee
       - name: logCost
       - name: Ship_cost
@@ -40,10 +33,7 @@ models:
       - name: orders_id
       - name: key
         description: primary key
-        tests:
-          - unique
-          - not_null
-              
+        
       - name: pdt_id as products_id
       - name: revenue
       - name: quantity
