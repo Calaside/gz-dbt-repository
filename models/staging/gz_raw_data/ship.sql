@@ -1,20 +1,8 @@
-with 
+with
 
-source as (
+    source as (select * from {{ source("gz_raw_data", "raw_gz_ship") }}),
 
-    select * from {{ source('gz_raw_data', 'raw_gz_ship') }}
+    renamed as (select orders_id, shipping_fee, logcost, ship_cost from source)
 
-),
-
-renamed as (
-
-    select
-       orders_id,
-       shipping_fee,
-       logCost,
-       Ship_cost
-    from source
-
-)
-
-select * from renamed
+select *
+from renamed
