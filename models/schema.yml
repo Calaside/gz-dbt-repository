@@ -33,7 +33,6 @@ models:
       - name: orders_id
       - name: key
         description: primary key
-        
       - name: pdt_id as products_id
       - name: revenue
       - name: quantity
