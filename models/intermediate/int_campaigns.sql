@@ -18,4 +18,4 @@ with
     FROM {{ ref("bing") }})
     
 select *
-from transformed
+from joined

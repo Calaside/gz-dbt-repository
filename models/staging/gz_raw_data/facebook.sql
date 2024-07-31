@@ -9,7 +9,11 @@ source as (
 renamed as (
 
     select
-        products_id,
+        date_date,
+        campaign_key,
+        paid_source,
+        click,
+        impression,
         CAST (ads_cost AS FLOAT64) as ads_cost
     from source
 

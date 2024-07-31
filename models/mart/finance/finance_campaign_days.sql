@@ -10,16 +10,14 @@ with
     transformed as 
     (select 
         date_date,
-        orders_id,
-        products_id,
-        quantity,
-        purchase_cost,
-        revenue,
-        margin,
+        nb_transactions,
+        avg_basket,
+        daily_operational_margin,
+        daily_margin,
         daily_sources,
         daily_campaign,
         daily_costs,
-        ROUND(margin - daily_costs, 2) AS net_margin
+        ROUND(daily_margin - daily_costs, 2) AS net_margin
     from joined)
 
 select *
