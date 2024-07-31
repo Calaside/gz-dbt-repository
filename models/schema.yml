@@ -10,6 +10,10 @@ sources:
         description: orders id, shipping fees & costs, log costs
       - name: raw_gz_sales
         description: date, orders id, products id, revenue and qty
+      - name: raw_gz_adwords
+      - name: raw_gz_bing
+      - name: raw_gz_criteo
+      - name: raw_gz_facebook
 
 models:
   - name: product
@@ -36,3 +40,43 @@ models:
       - name: pdt_id as products_id
       - name: revenue
       - name: quantity
+
+  - name: adwords
+    description: summary of adwords campaign (costs & results)
+    columns:
+      - name: date_date
+      - name: paid_source
+      - name: campaign_key
+      - name: camPGN_name
+      - name: ads_costs
+      - name: impression
+
+  - name: bing
+    description: summary of bing campaign (costs & results)
+    columns:
+      - name: date_date
+      - name: paid_source
+      - name: campaign_key
+      - name: camPGN_name
+      - name: ads_costs
+      - name: impression
+
+  - name: criteo
+    description: summary of criteo campaign (costs & results)
+    columns:
+      - name: date_date
+      - name: paid_source
+      - name: campaign_key
+      - name: camPGN_name
+      - name: ads_costs
+      - name: impression
+
+  - name: facebook
+    description: summary of facebook campaign (costs & results)
+    columns:
+      - name: date_date
+      - name: paid_source
+      - name: campaign_key
+      - name: camPGN_name
+      - name: ads_costs
+      - name: impression
